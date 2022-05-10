@@ -1,84 +1,45 @@
-// Ensure that the user only chooses betweeen 'rock', 'paper' or 'scissors'.
-const getUserChoice = (userInput) => {
-    userInput = userInput.toLowerCase();
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb'){
-      return userInput;
-    } else {
-      console.log("Please type either rock, paper or scissors")
-    }
-  };
+function storeVar(value){
+  // User Selection
+  let userChoice = value;
+  console.log(userChoice);
+    
+  // Computer Selection
+  let choiceStack = ['paper', 'rock', 'scissors'];
   
-  // Make the computer choose using math.random.
-  const getComputerChoice = () => {
-    randomNumber = Math.floor(Math.random() * 3);
-    switch (randomNumber) {
-      case 0:
-        return 'rock';
-      case 1:
-        return 'paper';
-      case 2:
-        return 'scissors';
-    }
-  };
+  let randomNum = Math.floor(Math.random() * 3);
   
-  // Conditions to determine the game winner.
+  let computerChoice = choiceStack[randomNum];
+  
+  console.log(document.getElementById('uPick').innerHTML = `Your choice is ${userChoice}, the computer's choice is ${computerChoice}.`);
+    
+  // Selecting a Winner based on selections
   const determineWinner = (userChoice, computerChoice) => {
-    // This determines Tie scenario.
-    if (userChoice === computerChoice){
-      return "This game is a Tie!!!";
-    }
-    // If user picks rock.
-    if (userChoice === 'rock') {
-    if (computerChoice === 'paper') {
-      return 'The computer won!';
-    } else {
-      return 'You won!';
-      }
-    }
-    // If user picks paper.
-    if (userChoice === 'paper') {
-    if (computerChoice === 'scissors') {
-      return 'The computer won!';
-    } else {
-      return 'You won!';
-      }
-    }
-    // If user picks scissors.
-    if (userChoice === 'scissors') {
-    if (computerChoice === 'rock') {
-      return 'The computer won!';
-    } else {
-      return 'You won!';
-      }
-    }
-    // If user picks bomb.
-    if (userChoice === 'bomb') {
-    if (computerChoice === 'rock' || computerChoice === 'paper' || computerChoice === 'scissors')  {
-      return 'You won!';
-    } 
-    }
+  if (userChoice === computerChoice){
+    console.log(document.getElementById('main').innerHTML = "Tie!");
+  }else if (
+    userChoice === 'paper' && computerChoice === 'rock'){
+    console.log(document.getElementById('main').innerHTML = "You win!");
+  }else if (userChoice === 'rock' && computerChoice === 'scissors'){
+    console.log(document.getElementById('main').innerHTML = "You win!");
+  }else if (userChoice === 'scissors' && computerChoice === 'rock'){
+    console.log(document.getElementById('main').innerHTML = "You lose!");
+  }else if (userChoice === 'rock' && computerChoice === 'paper'){
+    console.log(document.getElementById('main').innerHTML = "You lose!");
+  }else if (userChoice === 'paper' && computerChoice === 'scissors'){
+    console.log(document.getElementById('main').innerHTML = "You lose!");
+  }else if (userChoice === 'scissors' || computerChoice === 'paper'){
+    console.log(document.getElementById('main').innerHTML = "You lose!");
+  }else{
+    console.log(document.getElementById('main').innerHTML = "Invalid input, please try again");
   };
+};
   
-  // A function to start the game.
-  const playGame = () => {
-    // The users choice.  
-    const userChoice = getUserChoice('rock'); 
-    // The computers choice.  
-    const computerChoice = getComputerChoice();
-    // printing what the user chose. 
-    console.log("You threw " + userChoice);
-    // printing what the computer chose.
-    console.log("The computer threw " + computerChoice);
-    // Determining a Winner.
-    console.log(determineWinner(userChoice, computerChoice));
-    // This will print the results of the game.
-    document.getElementById("main").innerHTML = determineWinner(userChoice, computerChoice);
-  };
+  console.log(determineWinner(userChoice, computerChoice));
 
-  // Calling the play function.
-  playGame();
+  };
   
-  function myFunction() {
-    var x = document.getElementById("rockBtn").value;
-    console.log(x);
+  // Clearing everything.
+  function clearResult() {
+    console.log(document.getElementById('uPick').innerHTML ="");
+    console.log(document.getElementById('main').innerHTML = "");
   }

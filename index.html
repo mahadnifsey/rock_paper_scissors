@@ -17,14 +17,26 @@
 		</section>
 
 		<section id="options">
-			<button class="buttons" id="rockBtn" role="button" value="rock">Rock</button>
-			<button class="buttons" role="button" value="paper">Paper</button>
-			<button class="buttons" role="button" value="scissors">Scissors</button>
+			<button type="button" class="buttons" id='btn-one' onclick='storeVar(this.value)' value='rock'>Rock</button>
+			<button type="button" class="buttons" id='btn-two' onclick='storeVar(this.value)' value='paper'>Paper</button>
+			<button type="button" class="buttons" id='btn-three' onclick='storeVar(this.value)' value='scissors'>Scissors</button>
 		</section>
 
-		<section id="results">	
-		<h2>Results</h2>
-		<h3 id="main"></h3>
+		<section class="outcome">
+			<h1>Outcomes</h1>
+			<section id="choices">
+				<h2>Choices</h2>
+				<h3 id="uPick"></h3>
+			</section>
+
+			<section id="results">	
+			<h2>Results</h2>
+			<h3 id="main"></h3>
+			</section>
+		</section>
+
+		<section id="reset">
+			<button type="button" class="buttons" id="reset" onclick="clearResult()" value="Reset">Clear</button>
 		</section>
 
 		<script type="text/javascript" src="js/main.js"></script>

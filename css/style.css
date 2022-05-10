@@ -3,21 +3,28 @@ html {
 }
 
 body {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  height: 100vh;
+  background: url("../img/desert.jpg") no-repeat top center/cover;
 }
 
 body section{
   margin: 1rem;
 }
 
+#title {
+  display: flex;
+  justify-content: center;
+  border: 1px solid red;
+}
+
 
 #options {
   display: flex;
   justify-content: center;
-  width: 50%;
   border: 1px solid red;
 }
 
@@ -52,13 +59,31 @@ body section{
   transition-duration: .1s;
 }
 
-#results {
+.outcome {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  border: 1px solid green;
+  border: 2px solid red;
+  height: 30%;
+}
 
+#choices {
+  border: 1px solid red;
+  width: 50%;
+  height: 30%;
+}
+
+#results {
+  border: 1px solid green;
+  width: 50%;
+  height: 30%;
+}
+
+#reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*------------------------------------*/
