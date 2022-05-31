@@ -1,14 +1,20 @@
 var vid1 = document.getElementById("video1");
 var vid2 = document.getElementById("video2");
 
+// Play the Video
 playVid1 = () => { vid1.play(); };
 playVid2 = () => { vid2.play(); };
+// Pause the video
+playVid3 = () => { vid1.load(); };
+playVid4 = () => { vid2.load(); };
 
 function clearResult() {
   console.log(document.getElementById('uPick').innerHTML ="");
   console.log(document.getElementById('main').innerHTML = "");
   document.getElementById("video1").style.display = 'none';
   document.getElementById("video2").style.display = 'none';
+  playVid3();
+  playVid4();
 };
 
 function storeVar(value){
