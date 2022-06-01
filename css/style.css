@@ -8,7 +8,7 @@ body {
   justify-content: center;
   align-items: center; */
   height: 99vh;
-  background: url("../img/desert.jpg") no-repeat top center/cover;
+  background: url("../img/background.png") no-repeat top center/cover;
 }
 
 body section{
